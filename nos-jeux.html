@@ -1,109 +1,199 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oniry — Nos jeux</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Oniry — Nos jeux</title>
+<link rel="stylesheet" href="style.css" />
+
+<style>
+
+/* ---- grille jeux style switch ---- */
+
+.games-grid{
+display:flex;
+justify-content:center;
+gap:24px;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.game-card{
+width:170px;
+cursor:pointer;
+transition:0.25s;
+}
+
+.game-card img{
+width:100%;
+border-radius:14px;
+border:2px solid rgba(124,58,237,0.3);
+box-shadow:0 0 20px rgba(0,0,0,0.4);
+transition:0.25s;
+}
+
+.game-card:hover img{
+transform:scale(1.08);
+border-color:var(--violet-light);
+}
+
+.game-title{
+margin-top:10px;
+font-weight:600;
+font-size:0.9rem;
+color:var(--text);
+}
+
+/* ---- menu déroulant ---- */
+
+.game-dropdown{
+display:none;
+margin-top:30px;
+background:rgba(255,255,255,0.04);
+border:1px solid var(--border);
+border-radius:14px;
+padding:24px;
+text-align:left;
+}
+
+.game-dropdown.active{
+display:block;
+}
+
+.tournament{
+display:flex;
+justify-content:space-between;
+padding:10px 0;
+border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.tournament a{
+color:var(--blue-light);
+text-decoration:none;
+font-weight:600;
+}
+
+.tournament a:hover{
+color:var(--violet-light);
+}
+
+.winner{
+color:var(--text-muted);
+font-size:0.9rem;
+}
+
+</style>
+
 </head>
 <body>
 
 <header>
-  <div class="header-inner">
-    <a href="index.html" class="logo">ONIRY</a>
-    <nav>
-      <a href="index.html">Accueil</a>
-      <a href="qui-sommes-nous.html">Qui sommes-nous</a>
-      <a href="planning.html">Planning</a>
-      <a href="nos-jeux.html" class="active">Nos jeux</a>
-      <a href="nos-reseaux.html">Nos réseaux</a>
-      <a href="nous-rejoindre.html" class="cta">Nous rejoindre</a>
-    </nav>
-  </div>
+<div class="header-inner">
+<a href="index.html" class="logo">ONIRY</a>
+<nav>
+<a href="index.html">Accueil</a>
+<a href="qui-sommes-nous.html">Qui sommes-nous</a>
+<a href="planning.html">Planning</a>
+<a href="nos-jeux.html" class="active">Nos jeux</a>
+<a href="nos-reseaux.html">Nos réseaux</a>
+<a href="nous-rejoindre.html" class="cta">Nous rejoindre</a>
+</nav>
+</div>
 </header>
 
 <main>
-  <div class="container" style="text-align:center;">
+<div class="container" style="text-align:center;">
 
-    <div class="badge">Communauté</div>
-    <h1>Nos jeux</h1>
-    <div class="divider"></div>
+<div class="badge">Communauté</div>
+<h1>Nos jeux</h1>
+<div class="divider"></div>
 
-    <p>
-      Chez <strong style="color:#e2e8f0;">Oniry</strong>, nous organisons des événements
-      et des rencontres autour de plusieurs jeux populaires de la scène e-sport
-      et gaming communautaire.
-    </p>
+<p>
+Cliquez sur un jeu pour voir les tournois organisés par l'association.
+</p>
 
-    <p>
-      Notre objectif est de rassembler les joueurs, créer des moments
-      mémorables et faire vivre la communauté autour de nos événements.
-    </p>
+<div class="games-grid">
 
-    <div style="
-      display:flex;
-      justify-content:center;
-      gap:24px;
-      margin-top:40px;
-      flex-wrap:wrap;
-    ">
+<!-- Minecraft -->
 
-      <!-- Jeu 1 -->
-      <div style="
-        background:rgba(255,255,255,0.03);
-        border:1px solid rgba(124,58,237,0.3);
-        border-radius:14px;
-        padding:28px 34px;
-        min-width:200px;
-      ">
-        <h3>Minecraft</h3>
-        <p>Serveurs communautaires, événements et mini-jeux.</p>
-      </div>
+<div class="game-card" onclick="showGame('minecraft')">
+<img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png">
+<div class="game-title">Minecraft</div>
+</div>
 
-      <!-- Jeu 2 -->
-      <div style="
-        background:rgba(255,255,255,0.03);
-        border:1px solid rgba(37,99,235,0.3);
-        border-radius:14px;
-        padding:28px 34px;
-        min-width:200px;
-      ">
-        <h3>Valorant</h3>
-        <p>Tournois, scrims et soirées compétitives.</p>
-      </div>
+<!-- Valorant -->
 
-      <!-- Jeu 3 -->
-      <div style="
-        background:rgba(255,255,255,0.03);
-        border:1px solid rgba(124,58,237,0.3);
-        border-radius:14px;
-        padding:28px 34px;
-        min-width:200px;
-      ">
-        <h3>League of Legends</h3>
-        <p>Clash, tournois communautaires et événements.</p>
-      </div>
+<div class="game-card" onclick="showGame('valorant')">
+<img src="https://upload.wikimedia.org/wikipedia/en/b/ba/Valorant_cover_art.jpg">
+<div class="game-title">Valorant</div>
+</div>
 
-      <!-- Jeu 4 -->
-      <div style="
-        background:rgba(255,255,255,0.03);
-        border:1px solid rgba(37,99,235,0.3);
-        border-radius:14px;
-        padding:28px 34px;
-        min-width:200px;
-      ">
-        <h3>Super smash bros</h3>
-        <p>Tournois IRL organisés au gîte</p>
-      </div>
+<!-- League of Legends -->
 
-    </div>
+<div class="game-card" onclick="showGame('lol')">
+<img src="https://upload.wikimedia.org/wikipedia/en/7/77/League_of_Legends_cover.jpg">
+<div class="game-title">League of Legends</div>
+</div>
 
-  </div>
+<!-- Smash -->
+
+<div class="game-card" onclick="showGame('smash')">
+<img src="https://upload.wikimedia.org/wikipedia/en/5/50/Super_Smash_Bros._Ultimate.jpg">
+<div class="game-title">Super Smash Bros</div>
+</div>
+
+</div>
+
+<!-- MENUS DEROULANTS -->
+
+<div id="minecraft" class="game-dropdown">
+<h3>Minecraft</h3>
+<p>Aucun tournoi pour le moment.</p>
+</div>
+
+<div id="valorant" class="game-dropdown">
+<h3>Valorant</h3>
+<p>Aucun tournoi pour le moment.</p>
+</div>
+
+<div id="lol" class="game-dropdown">
+<h3>League of Legends</h3>
+<p>Aucun tournoi pour le moment.</p>
+</div>
+
+<div id="smash" class="game-dropdown">
+
+<h3>Super Smash Bros</h3>
+
+<div class="tournament">
+<a href="https://www.supermajor.gg/ultimate/event/S1120974" target="_blank">
+Combat de poulet #1
+</a>
+<div class="winner">🏆 Marshadox</div>
+</div>
+
+</div>
+
+</div>
 </main>
 
 <footer>
-  &copy; 2026 Oniry &mdash; Tous droits réservés
+&copy; 2026 Oniry &mdash; Tous droits réservés
 </footer>
+
+<script>
+
+function showGame(id){
+
+document.querySelectorAll(".game-dropdown").forEach(el=>{
+el.classList.remove("active")
+})
+
+document.getElementById(id).classList.add("active")
+
+}
+
+</script>
 
 </body>
 </html>
