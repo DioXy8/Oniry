@@ -1,19 +1,20 @@
-/* Reset basique */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body et polices */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f2f5;
     color: #333;
     line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Header et navigation */
+/* Header et nav */
 header {
     background-color: #1f2a38;
     position: sticky;
@@ -25,26 +26,30 @@ nav {
     display: flex;
     justify-content: center;
     padding: 15px 0;
+    flex-wrap: wrap;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 25px;
+    margin: 10px 15px;
     font-weight: 600;
     font-size: 16px;
-    transition: color 0.3s;
+    padding: 6px 12px;
+    border-radius: 5px;
+    transition: all 0.3s;
 }
 
 nav a:hover {
-    color: #f39c12;
+    background-color: #f39c12;
+    color: #fff;
 }
 
 /* Conteneur central */
 .container {
     max-width: 1000px;
-    margin: 40px auto;
-    padding: 30px;
+    margin: 60px auto 40px;
+    padding: 40px;
     background-color: white;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
@@ -69,41 +74,130 @@ p {
     margin-bottom: 20px;
 }
 
-/* Liste des événements */
-ul {
+/* Liste événements en cards */
+ul.event-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
     list-style: none;
     padding: 0;
 }
 
-ul li {
+ul.event-list li {
     background-color: #f7f9fc;
-    margin: 10px auto;
-    padding: 12px 20px;
-    border-left: 5px solid #f39c12;
-    border-radius: 6px;
-    max-width: 600px;
-    transition: transform 0.3s;
+    padding: 15px;
+    border-left: 6px solid #f39c12;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-ul li:hover {
-    transform: translateX(5px);
+ul.event-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
-/* Footer simple */
+/* Footer */
 footer {
     text-align: center;
     padding: 20px;
-    margin-top: 40px;
+    margin-top: auto;
     font-size: 14px;
     color: #777;
 }
 
-/* Responsive menu */
-@media (max-width: 600px) {
-    nav {
-        flex-direction: column;
-    }
-    nav a {
-        margin: 10px 0;
-    }
+/* Formulaire email / adhésion */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+input, textarea, button {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 400px;
+}
+
+button {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #e67e22;
+}
+
+/* Calendrier planning */
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.calendar div.day {
+    background-color: #f7f9fc;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+.calendar div.day.has-event {
+    border-left: 5px solid #f39c12;
+}
+
+/* Popup détails événement */
+.event-popup {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border: 2px solid #f39c12;
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 10;
+    width: 180px;
+}
+
+/* Réseaux sociaux */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.social-twitter { background-color: #1DA1F2; }
+.social-discord { background-color: #5865F2; }
+.social-x { background-color: #000; }
+
+.social-links a:hover {
+    opacity: 0.8;
 }
