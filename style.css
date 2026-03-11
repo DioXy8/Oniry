@@ -418,3 +418,15 @@ p {
     color: var(--violet-light);
     text-decoration: none;
 }
+
+footer {
+    position: relative;
+    z-index: 1;
+    margin-top: auto;
+    text-align: center;
+    padding: 24px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    letter-spacing: 0.04em;
+}
