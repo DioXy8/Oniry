@@ -1,30 +1,85 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Oniry - Accueil</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oniry — Accueil</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header>
-    <nav>
-        <a href="index.html">Accueil</a>
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">ONIRY</a>
+      <nav>
+        <a href="index.html" class="active">Accueil</a>
         <a href="qui-sommes-nous.html">Qui sommes-nous</a>
         <a href="planning.html">Planning</a>
-        <a href="nos-reseaux.html">Nos réseaux</a>
-        <a href="nous-rejoindre.html">Nous rejoindre</a>
-    </nav>
-</header>
+        <a href="nos-reseaux.html">Nos reseaux</a>
+        <a href="nous-rejoindre.html" class="cta">Nous rejoindre</a>
+      </nav>
+    </div>
+  </header>
 
-<div class="container">
-    <h1>Bienvenue sur le site d'Oniry</h1>
-    <p>Nous sommes une association qui crée des événements uniques pour rassembler la communauté.</p>
-</div>
+  <main>
+    <div class="container" style="text-align:center;">
+      <div class="badge">Association evenementielle</div>
+      <h1>Bienvenue sur le site d'Oniry</h1>
+      <div class="divider"></div>
+      <p>
+        Nous sommes une association dediee a la creation d'evenements uniques,
+        conçus pour rassembler, divertir et faire vivre des moments inoubliables
+        a toute la communaute.
+      </p>
+      <p>
+        Explorez notre planning, rejoignez l'aventure et suivez-nous
+        sur nos reseaux pour ne rien manquer.
+      </p>
+      <div style="display:flex; justify-content:center; gap:14px; margin-top:36px; flex-wrap:wrap;">
+        <a href="planning.html" style="
+          display:inline-block;
+          padding:13px 32px;
+          background:linear-gradient(135deg,#7c3aed,#2563eb);
+          color:#fff;
+          font-family:'Raleway',sans-serif;
+          font-weight:700;
+          font-size:0.92rem;
+          letter-spacing:0.07em;
+          text-transform:uppercase;
+          text-decoration:none;
+          border-radius:10px;
+          box-shadow:0 0 22px rgba(124,58,237,0.4);
+          transition:all 0.3s;
+        "
+        onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 0 36px rgba(124,58,237,0.6)'"
+        onmouseout="this.style.transform='';this.style.boxShadow='0 0 22px rgba(124,58,237,0.4)'"
+        >Voir le planning</a>
 
-<footer>
-    &copy; 2026 Oniry - Tous droits réservés
-</footer>
+        <a href="nous-rejoindre.html" style="
+          display:inline-block;
+          padding:13px 32px;
+          background:transparent;
+          color:#a855f7;
+          font-family:'Raleway',sans-serif;
+          font-weight:700;
+          font-size:0.92rem;
+          letter-spacing:0.07em;
+          text-transform:uppercase;
+          text-decoration:none;
+          border-radius:10px;
+          border:1px solid rgba(124,58,237,0.4);
+          transition:all 0.3s;
+        "
+        onmouseover="this.style.background='rgba(124,58,237,0.12)';this.style.transform='translateY(-2px)'"
+        onmouseout="this.style.background='transparent';this.style.transform=''"
+        >Nous rejoindre</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 Oniry &mdash; Tous droits reserves
+  </footer>
 
 </body>
 </html>
