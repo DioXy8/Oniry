@@ -2,17 +2,17 @@
 
 /* ---- Variables ---- */
 :root {
-  --violet:     #7c3aed;
+  --violet:      #7c3aed;
   --violet-light: #a855f7;
-  --blue:       #2563eb;
+  --blue:        #2563eb;
   --blue-light: #60a5fa;
-  --bg:         #080812;
+  --bg:          #080812;
   --bg-card:    rgba(255,255,255,0.04);
-  --border:     rgba(124,58,237,0.25);
-  --text:       #e2e8f0;
+  --border:      rgba(124,58,237,0.25);
+  --text:        #e2e8f0;
   --text-muted: #94a3b8;
-  --glow-v:     rgba(124,58,237,0.35);
-  --glow-b:     rgba(37,99,235,0.35);
+  --glow-v:      rgba(124,58,237,0.35);
+  --glow-b:      rgba(37,99,235,0.35);
 }
 
 /* ---- Reset ---- */
@@ -198,7 +198,7 @@ p {
   margin: 18px auto 28px;
 }
 
-/* ---- Badge "bientôt" ---- */
+/* ---- Badge ---- */
 .badge {
   display: inline-block;
   background: rgba(124,58,237,0.2);
@@ -213,60 +213,62 @@ p {
   margin-bottom: 20px;
 }
 
-/* ---- Réseaux sociaux ---- */
+/* ---- RÉSEAUX SOCIAUX (MODE CARRÉ) ---- */
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 18px;
-  margin-top: 28px;
+  gap: 24px;
+  margin-top: 40px;
   flex-wrap: wrap;
 }
 
 .social-links a {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  padding: 14px 26px;
-  border-radius: 12px;
+  justify-content: center;
+  width: 160px;
+  height: 160px;
+  border-radius: 20px;
   text-decoration: none;
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
-  font-size: 0.95rem;
-  letter-spacing: 0.04em;
-  border: 1px solid transparent;
-  transition: all 0.3s;
-  color: inherit; /* SVG prendra cette couleur */
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  color: inherit;
 }
 
 .social-links a svg {
-  display: inline-block;
-  vertical-align: middle;
-  flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-  fill: currentColor; /* SVG prend la couleur définie */
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+  transition: transform 0.3s ease;
+  fill: currentColor;
 }
 
-.social-x {
-  background: rgba(0,0,0,0.5);
-  border-color: rgba(255,255,255,0.12);
-  color: #fff;
-}
-.social-x:hover {
-  border-color: rgba(255,255,255,0.35);
-  box-shadow: 0 0 20px rgba(255,255,255,0.1);
-  transform: translateY(-3px);
+.social-links a:hover {
+  transform: translateY(-8px);
+  background: rgba(124, 58, 237, 0.08);
+  border-color: var(--violet-light);
 }
 
-.social-discord {
-  background: rgba(88,101,242,0.15);
-  border-color: rgba(88,101,242,0.35);
-  color: #8fa3ff;
+.social-links a:hover svg {
+  transform: scale(1.15);
 }
-.social-discord:hover {
-  box-shadow: 0 0 24px rgba(88,101,242,0.4);
-  transform: translateY(-3px);
-  color: #fff;
+
+.social-x { color: #fff; }
+.social-x:hover { box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05); }
+
+.social-discord { color: #8fa3ff; border-color: rgba(88, 101, 242, 0.2); }
+.social-discord:hover { 
+  color: #fff; 
+  border-color: #5865f2; 
+  background: rgba(88, 101, 242, 0.15) !important; 
+  box-shadow: 0 10px 30px rgba(88, 101, 242, 0.3); 
 }
 
 /* ---- Planning / Onglets ---- */
@@ -292,10 +294,8 @@ p {
   cursor: pointer;
   transition: all 0.25s;
 }
-.tab-btn:hover {
-  background: rgba(124,58,237,0.12);
-  color: var(--text);
-}
+
+.tab-btn:hover { background: rgba(124,58,237,0.12); color: var(--text); }
 .tab-btn.active {
   background: linear-gradient(135deg, var(--violet), var(--blue));
   border-color: transparent;
@@ -318,6 +318,7 @@ p {
   transition: all 0.3s;
   text-align: left;
 }
+
 .event-card:hover {
   background: rgba(124,58,237,0.08);
   border-color: rgba(124,58,237,0.45);
@@ -331,6 +332,7 @@ p {
   border-radius: 10px;
   padding: 10px 8px;
 }
+
 .event-date .day {
   font-family: 'Cinzel', serif;
   font-size: 1.4rem;
@@ -339,6 +341,7 @@ p {
   line-height: 1;
   display: block;
 }
+
 .event-date .month {
   font-size: 0.72rem;
   font-weight: 700;
@@ -348,10 +351,7 @@ p {
   display: block;
 }
 
-.event-info p {
-  margin: 4px 0 0;
-  font-size: 0.88rem;
-}
+.event-info p { margin: 4px 0 0; font-size: 0.88rem; }
 
 /* ---- Nous rejoindre — étapes ---- */
 .steps {
@@ -372,6 +372,7 @@ p {
   padding: 20px 24px;
   transition: all 0.3s;
 }
+
 .step:hover {
   background: rgba(124,58,237,0.08);
   border-color: rgba(124,58,237,0.45);
@@ -412,19 +413,15 @@ footer {
   nav { justify-content: center; }
   .container { margin: 30px 16px 40px; padding: 30px 22px; }
   h1 { font-size: 1.9rem; }
-  .social-links { flex-direction: column; align-items: center; }
+  .social-links { gap: 15px; }
+  .social-links a { width: 130px; height: 130px; }
   .step { flex-direction: column; }
 }
 
-/* ---- Liens internes dans les paragraphes ---- */
 .internal-link {
   color: var(--blue-light);
   font-weight: 600;
   text-decoration: underline;
   transition: all 0.2s ease;
 }
-
-.internal-link:hover {
-  color: var(--violet-light);
-  text-decoration: none;
-}
+.internal-link:hover { color: var(--violet-light); text-decoration: none; }
