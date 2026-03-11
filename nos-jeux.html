@@ -79,6 +79,7 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="header-inner">
@@ -99,36 +100,37 @@
             <div class="badge">Communauté</div>
             <h1>Nos jeux</h1>
             <div class="divider"></div>
-            <p> Cliquez sur un jeu pour voir les tournois organisés par l'association. </p>
+            <p>
+                Cliquez sur un jeu pour voir les tournois organisés par l'association.
+            </p>
 
-            <!-- Grille des jeux -->
             <div class="games-grid">
                 <!-- Minecraft -->
                 <div class="game-card" onclick="showGame('minecraft')">
-                    <img src="https://i.pinimg.com/736x/3c/79/dd/3c79dde66a4c4106d50a66acc2cc5344.jpg" alt="Minecraft">
+                    <img src="https://i.pinimg.com/736x/3c/79/dd/3c79dde66a4c4106d50a66acc2cc5344.jpg" />
                     <div class="game-title">Minecraft</div>
                 </div>
 
                 <!-- Valorant -->
                 <div class="game-card" onclick="showGame('valorant')">
-                    <img src="https://cloudgames.gg/wp-content/uploads/valorant-portrait.jpg" alt="Valorant">
+                    <img src="https://cloudgames.gg/wp-content/uploads/valorant-portrait.jpg" />
                     <div class="game-title">Valorant</div>
                 </div>
 
                 <!-- League of Legends -->
                 <div class="game-card" onclick="showGame('lol')">
-                    <img src="https://cloudgames.gg/wp-content/uploads/league-of-legends-portrait.jpg" alt="League of Legends">
+                    <img src="https://cloudgames.gg/wp-content/uploads/league-of-legends-portrait.jpg" />
                     <div class="game-title">League of Legends</div>
                 </div>
 
-                <!-- Super Smash Bros -->
+                <!-- Smash -->
                 <div class="game-card" onclick="showGame('smash')">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/5/50/Super_Smash_Bros._Ultimate.jpg" alt="Super Smash Bros">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/5/50/Super_Smash_Bros._Ultimate.jpg" />
                     <div class="game-title">Super Smash Bros</div>
                 </div>
             </div>
 
-            <!-- Menus déroulants -->
+            <!-- MENUS DEROULANTS -->
             <div id="minecraft" class="game-dropdown">
                 <h3>Minecraft</h3>
                 <p>Aucun tournoi pour le moment.</p>
@@ -147,7 +149,9 @@
             <div id="smash" class="game-dropdown">
                 <h3>Super Smash Bros</h3>
                 <div class="tournament">
-                    <a href="https://www.supermajor.gg/ultimate/event/S1120974" target="_blank">Combat de poulet #1</a>
+                    <a href="https://www.supermajor.gg/ultimate/event/S1120974" target="_blank">
+                        Combat de poulet #1
+                    </a>
                     <div class="winner">🏆 Marshadox</div>
                 </div>
             </div>
