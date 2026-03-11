@@ -425,3 +425,13 @@ footer {
   transition: all 0.2s ease;
 }
 .internal-link:hover { color: var(--violet-light); text-decoration: none; }
+
+.game-card img{
+  width: 100%;
+  height: 200px;        /* hauteur fixe pour toutes les images */
+  object-fit: cover;    /* recadre l'image pour remplir la zone sans la déformer */
+  border-radius: 14px;
+  border: 2px solid rgba(124,58,237,0.3);
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  transition: 0.25s;
+}
