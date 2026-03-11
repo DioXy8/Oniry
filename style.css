@@ -426,14 +426,131 @@ footer {
 }
 .internal-link:hover { color: var(--violet-light); text-decoration: none; }
 
+/* ============================================================
+   SPÉCIFIQUE À LA PAGE NOS-JEUX.HTML
+   ============================================================ */
+
+/* ---- Grille des jeux ---- */
+.games-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;           /* Plus d'espace entre les cartes */
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+/* ---- Carte de jeu individuelle ---- */
+.game-card {
+  width: 190px;         /* Légèrement plus large pour plus de présence */
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+/* ---- Image du jeu ---- */
 .game-card img {
   width: 100%;
-  height: 230px;        /* Force une hauteur identique pour toutes les images */
-  object-fit: cover;    /* Recadre l'image pour qu'elle remplisse le cadre sans se déformer */
-  object-position: top; /* Garde le haut de l'image (important pour les portraits de persos) */
-  border-radius: 14px;
+  height: 270px;        /* Plus haute pour un meilleur format portrait */
+  object-fit: cover;    /* Recadre sans déformer */
+  border-radius: 16px;
   border: 2px solid rgba(124,58,237,0.3);
-  box-shadow: 0 0 20px rgba(0,0,0,0.4);
-  transition: 0.25s;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
   display: block;
+}
+
+/* ---- Le titre en dessous de l'image ---- */
+.game-title {
+  margin-top: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-muted);
+  transition: color 0.3s;
+}
+
+/* ==============================
+   EFFETS HOVER (SURVOL)
+   ============================== */
+.game-card:hover img {
+  transform: translateY(-5px); /* Monte légèrement */
+  border-color: var(--violet-light);
+  box-shadow: 0 15px 40px rgba(124,58,237,0.2);
+}
+
+.game-card:hover .game-title {
+  color: var(--text); /* Éclaircit le titre au survol */
+}
+
+/* ==============================
+   LE GLOW ! (QUAND SÉLECTIONNÉ)
+   ============================== */
+
+/* Cette classe CSS sera ajoutée par le JavaScript */
+.game-card.active img {
+  border-color: var(--violet);
+  /* Voici le glow puissant autour de l'image */
+  box-shadow: 0 0 35px var(--glow-v), 0 0 10px rgba(124,58,237,0.8);
+  transform: scale(1.03) translateY(-5px); /* Grossit et monte un peu */
+}
+
+.game-card.active .game-title {
+  color: var(--violet-light); /* Titre en violet pour le jeu actif */
+}
+
+/* ---- Cadrage spécifique pour Smash Ultimate ---- */
+/* On cible l'image de Smash Bros pour qu'elle centre le titre 'Ultimate' */
+.game-card[onclick*="smash"] img {
+  object-position: center 20%; /* Remonte un peu l'image pour voir le titre 'Ultimate' en bas */
+}
+
+/* ---- Menus déroulants (Tournois) ---- */
+.game-dropdown {
+  display: none;
+  margin-top: 40px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 30px;
+  text-align: left;
+  backdrop-filter: blur(10px);
+  animation: fadeSlideUp 0.5s ease both;
+}
+
+.game-dropdown.active {
+  display: block;
+}
+
+.tournament {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.tournament:last-child {
+  border-bottom: none;
+}
+
+.tournament a {
+  color: var(--blue-light);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.tournament a:hover {
+  color: var(--violet-light);
+  text-decoration: underline;
+}
+
+.winner {
+  color: #fbbf24; /* Couleur or pour le vainqueur */
+  font-weight: 700;
+  font-size: 0.95rem;
+  background: rgba(251, 191, 36, 0.1);
+  padding: 5px 12px;
+  border-radius: 99px;
+  border: 1px solid rgba(251, 191, 36, 0.2);
 }
