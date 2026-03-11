@@ -1,86 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Oniry — Nos jeux</title>
     <link rel="stylesheet" href="style.css" />
-    <style>
-        /* ---- grille jeux style switch ---- */
-        .games-grid {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-
-        .game-card {
-            width: 170px;
-            cursor: pointer;
-            transition: 0.25s;
-        }
-
-        .game-card img {
-            width: 100%;
-            border-radius: 14px;
-            border: 2px solid rgba(124, 58, 237, 0.3);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-            transition: 0.25s;
-        }
-
-        .game-card:hover img {
-            transform: scale(1.08);
-            border-color: var(--violet-light);
-        }
-
-        .game-title {
-            margin-top: 10px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--text);
-        }
-
-        /* ---- menu déroulant ---- */
-        .game-dropdown {
-            display: none;
-            margin-top: 30px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 24px;
-            text-align: left;
-        }
-
-        .game-dropdown.active {
-            display: block;
-        }
-
-        .tournament {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .tournament a {
-            color: var(--blue-light);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .tournament a:hover {
-            color: var(--violet-light);
-        }
-
-        .winner {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-    </style>
 </head>
-
 <body>
     <header>
         <div class="header-inner">
@@ -101,9 +26,7 @@
             <div class="badge">Communauté</div>
             <h1>Nos jeux</h1>
             <div class="divider"></div>
-            <p>
-                Cliquez sur un jeu pour voir les tournois organisés par l'association.
-            </p>
+            <p>Cliquez sur un jeu pour voir les tournois organisés par l'association.</p>
 
             <div class="games-grid">
                 <!-- Minecraft -->
@@ -124,10 +47,28 @@
                     <div class="game-title">League of Legends</div>
                 </div>
 
-                <!-- Smash -->
+                <!-- Super Smash Bros -->
                 <div class="game-card" onclick="showGame('smash')">
                     <img src="https://upload.wikimedia.org/wikipedia/en/5/50/Super_Smash_Bros._Ultimate.jpg" />
                     <div class="game-title">Super Smash Bros</div>
+                </div>
+
+                <!-- Fortnite -->
+                <div class="game-card" onclick="showGame('fortnite')">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNWJmZThhMzktZjI4NC00OTdmLThmMjItNTcxNDdjNjU0YmM0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" />
+                    <div class="game-title">Fortnite</div>
+                </div>
+
+                <!-- Rocket League -->
+                <div class="game-card" onclick="showGame('rocketleague')">
+                    <img src="https://assets1.ignimgs.com/2019/08/26/rocket-league---button-fin-1566850630208.jpg" />
+                    <div class="game-title">Rocket League</div>
+                </div>
+
+                <!-- Pokémon VGC -->
+                <div class="game-card" onclick="showGame('pokemonvgc')">
+                    <img src="https://static.actugaming.net/media/2025/02/Pokemon-Champions-jaquette.png" />
+                    <div class="game-title">Pokémon VGC</div>
                 </div>
             </div>
 
@@ -146,3 +87,35 @@
                 <h3>League of Legends</h3>
                 <p>Aucun tournoi pour le moment.</p>
             </div>
+
+            <div id="smash" class="game-dropdown">
+                <h3>Super Smash Bros</h3>
+                <p>Aucun tournoi pour le moment.</p>
+            </div>
+
+            <div id="fortnite" class="game-dropdown">
+                <h3>Fortnite</h3>
+                <p>Aucun tournoi pour le moment.</p>
+            </div>
+
+            <div id="rocketleague" class="game-dropdown">
+                <h3>Rocket League</h3>
+                <p>Aucun tournoi pour le moment.</p>
+            </div>
+
+            <div id="pokemonvgc" class="game-dropdown">
+                <h3>Pokémon VGC</h3>
+                <p>Aucun tournoi pour le moment.</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function showGame(id) {
+            document.querySelectorAll('.game-dropdown').forEach(el => el.classList.remove('active'));
+            const game = document.getElementById(id);
+            if(game) game.classList.add('active');
+        }
+    </script>
+</body>
+</html>
