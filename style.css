@@ -426,12 +426,22 @@ footer {
 }
 .internal-link:hover { color: var(--violet-light); text-decoration: none; }
 
-.game-card img{
+.game-card {
+  width: 170px;
+  cursor: pointer;
+  transition: 0.25s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-card img {
   width: 100%;
   height: 200px;        /* hauteur fixe pour toutes les images */
-  object-fit: cover;    /* recadre l'image pour remplir la zone sans la déformer */
+  object-fit: cover;    /* recadrage pour que l'image remplisse le cadre */
   border-radius: 14px;
   border: 2px solid rgba(124,58,237,0.3);
   box-shadow: 0 0 20px rgba(0,0,0,0.4);
   transition: 0.25s;
+  display: block;       /* supprime les espaces indésirables sous l'image */
 }
