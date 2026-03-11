@@ -5,79 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Oniry — Nos jeux</title>
     <link rel="stylesheet" href="style.css" />
-    <style>
-        /* ---- grille jeux style switch ---- */
-        .games-grid {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-
-        .game-card {
-            width: 170px;
-            cursor: pointer;
-            transition: 0.25s;
-        }
-
-        .game-card img {
-            width: 100%;
-            border-radius: 14px;
-            border: 2px solid rgba(124, 58, 237, 0.3);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-            transition: 0.25s;
-        }
-
-        .game-card:hover img {
-            transform: scale(1.08);
-            border-color: var(--violet-light);
-        }
-
-        .game-title {
-            margin-top: 10px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--text);
-        }
-
-        /* ---- menu déroulant ---- */
-        .game-dropdown {
-            display: none;
-            margin-top: 30px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 24px;
-            text-align: left;
-        }
-
-        .game-dropdown.active {
-            display: block;
-        }
-
-        .tournament {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .tournament a {
-            color: var(--blue-light);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .tournament a:hover {
-            color: var(--violet-light);
-        }
-
-        .winner {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-    </style>
 </head>
 
 <body>
@@ -96,7 +23,7 @@
     </header>
 
     <main>
-        <div class="container" style="text-align:center;">
+        <div class="container text-center">
             <div class="badge">Communauté</div>
             <h1>Nos jeux</h1>
             <div class="divider"></div>
@@ -105,32 +32,27 @@
             </p>
 
             <div class="games-grid">
-                <!-- Minecraft -->
                 <div class="game-card" onclick="showGame('minecraft')">
-                    <img src="https://i.pinimg.com/736x/3c/79/dd/3c79dde66a4c4106d50a66acc2cc5344.jpg" />
+                    <img src="https://i.pinimg.com/736x/3c/79/dd/3c79dde66a4c4106d50a66acc2cc5344.jpg" alt="Minecraft" />
                     <div class="game-title">Minecraft</div>
                 </div>
 
-                <!-- Valorant -->
                 <div class="game-card" onclick="showGame('valorant')">
-                    <img src="https://cloudgames.gg/wp-content/uploads/valorant-portrait.jpg" />
+                    <img src="https://cloudgames.gg/wp-content/uploads/valorant-portrait.jpg" alt="Valorant" />
                     <div class="game-title">Valorant</div>
                 </div>
 
-                <!-- League of Legends -->
                 <div class="game-card" onclick="showGame('lol')">
-                    <img src="https://cloudgames.gg/wp-content/uploads/league-of-legends-portrait.jpg" />
+                    <img src="https://cloudgames.gg/wp-content/uploads/league-of-legends-portrait.jpg" alt="League of Legends" />
                     <div class="game-title">League of Legends</div>
                 </div>
 
-                <!-- Smash -->
                 <div class="game-card" onclick="showGame('smash')">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/5/50/Super_Smash_Bros._Ultimate.jpg" />
+                    <img src="https://upload.wikimedia.org/wikipedia/en/5/50/Super_Smash_Bros._Ultimate.jpg" alt="Super Smash Bros" />
                     <div class="game-title">Super Smash Bros</div>
                 </div>
             </div>
 
-            <!-- MENUS DEROULANTS -->
             <div id="minecraft" class="game-dropdown">
                 <h3>Minecraft</h3>
                 <p>Aucun tournoi pour le moment.</p>
@@ -168,6 +90,10 @@
                 el.classList.remove("active");
             });
             document.getElementById(id).classList.add("active");
+            
+            setTimeout(() => {
+                document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
         }
     </script>
 </body>
