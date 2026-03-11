@@ -5,98 +5,166 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Oniry — Nos jeux</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        /* ---- grille jeux style switch ---- */
+        .games-grid {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .game-card {
+            width: 170px;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .game-card img {
+            width: 100%;
+            border-radius: 14px;
+            border: 2px solid rgba(124, 58, 237, 0.3);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            transition: 0.25s;
+        }
+
+        .game-card:hover img {
+            transform: scale(1.08);
+            border-color: var(--violet-light);
+        }
+
+        .game-title {
+            margin-top: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        /* ---- menu déroulant ---- */
+        .game-dropdown {
+            display: none;
+            margin-top: 30px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px;
+            text-align: left;
+        }
+
+        .game-dropdown.active {
+            display: block;
+        }
+
+        .tournament {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .tournament a {
+            color: var(--blue-light);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .tournament a:hover {
+            color: var(--violet-light);
+        }
+
+        .winner {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">ONIRY</a>
+            <nav>
+                <a href="index.html">Accueil</a>
+                <a href="qui-sommes-nous.html">Qui sommes-nous</a>
+                <a href="nos-jeux.html" class="active">Nos Jeux</a>
+                <a href="planning.html">Planning</a>
+                <a href="nos-reseaux.html">Nos réseaux</a>
+                <a href="nous-rejoindre.html" class="cta">Nous rejoindre</a>
+            </nav>
+        </div>
+    </header>
 
-<header>
-    <div class="header-inner">
-        <a href="index.html" class="logo">ONIRY</a>
-        <nav>
-            <a href="index.html">Accueil</a>
-            <a href="qui-sommes-nous.html">Qui sommes-nous</a>
-            <a href="nos-jeux.html" class="active">Nos Jeux</a>
-            <a href="planning.html">Planning</a>
-            <a href="nos-reseaux.html">Nos réseaux</a>
-            <a href="nous-rejoindre.html" class="cta">Nous rejoindre</a>
-        </nav>
-    </div>
-</header>
+    <main>
+        <div class="container" style="text-align:center;">
+            <div class="badge">Communauté</div>
+            <h1>Nos jeux</h1>
+            <div class="divider"></div>
+            <p> Cliquez sur un jeu pour voir les tournois organisés par l'association. </p>
 
-<main>
-    <div class="container">
-        <div class="badge">Communauté</div>
-        <h1>Nos jeux</h1>
-        <div class="divider"></div>
-        <p>Cliquez sur un jeu pour voir les tournois organisés par l'association.</p>
+            <!-- Grille des jeux -->
+            <div class="games-grid">
+                <!-- Minecraft -->
+                <div class="game-card" onclick="showGame('minecraft')">
+                    <img src="https://i.pinimg.com/736x/3c/79/dd/3c79dde66a4c4106d50a66acc2cc5344.jpg" alt="Minecraft">
+                    <div class="game-title">Minecraft</div>
+                </div>
 
-        <div class="games-grid">
-            <div class="game-card" onclick="showGame('minecraft', event)">
-                <img src="https://i.pinimg.com/736x/3c/79/dd/3c79dde66a4c4106d50a66acc2cc5344.jpg" alt="Minecraft">
-                <div class="game-title">Minecraft</div>
+                <!-- Valorant -->
+                <div class="game-card" onclick="showGame('valorant')">
+                    <img src="https://cloudgames.gg/wp-content/uploads/valorant-portrait.jpg" alt="Valorant">
+                    <div class="game-title">Valorant</div>
+                </div>
+
+                <!-- League of Legends -->
+                <div class="game-card" onclick="showGame('lol')">
+                    <img src="https://cloudgames.gg/wp-content/uploads/league-of-legends-portrait.jpg" alt="League of Legends">
+                    <div class="game-title">League of Legends</div>
+                </div>
+
+                <!-- Super Smash Bros -->
+                <div class="game-card" onclick="showGame('smash')">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/5/50/Super_Smash_Bros._Ultimate.jpg" alt="Super Smash Bros">
+                    <div class="game-title">Super Smash Bros</div>
+                </div>
             </div>
 
-            <div class="game-card" onclick="showGame('valorant', event)">
-                <img src="https://cloudgames.gg/wp-content/uploads/valorant-portrait.jpg" alt="Valorant">
-                <div class="game-title">Valorant</div>
+            <!-- Menus déroulants -->
+            <div id="minecraft" class="game-dropdown">
+                <h3>Minecraft</h3>
+                <p>Aucun tournoi pour le moment.</p>
             </div>
 
-            <div class="game-card" onclick="showGame('lol', event)">
-                <img src="https://cloudgames.gg/wp-content/uploads/league-of-legends-portrait.jpg" alt="LoL">
-                <div class="game-title">League of Legends</div>
+            <div id="valorant" class="game-dropdown">
+                <h3>Valorant</h3>
+                <p>Aucun tournoi pour le moment.</p>
             </div>
 
-            <div class="game-card" onclick="showGame('smash', event)">
-                <img src="https://www.ssbwiki.com/images/thumb/7/73/SSBU_box_art_NA.png/600px-SSBU_box_art_NA.png" alt="Smash Ultimate">
-                <div class="game-title">Super Smash Bros Ultimate</div>
+            <div id="lol" class="game-dropdown">
+                <h3>League of Legends</h3>
+                <p>Aucun tournoi pour le moment.</p>
+            </div>
+
+            <div id="smash" class="game-dropdown">
+                <h3>Super Smash Bros</h3>
+                <div class="tournament">
+                    <a href="https://www.supermajor.gg/ultimate/event/S1120974" target="_blank">Combat de poulet #1</a>
+                    <div class="winner">🏆 Marshadox</div>
+                </div>
             </div>
         </div>
+    </main>
 
-        <div id="minecraft" class="game-dropdown">
-            <h3>Minecraft</h3>
-            <p>Aucun tournoi pour le moment.</p>
-        </div>
+    <footer>
+        &copy; 2026 Oniry &mdash; Tous droits réservés
+    </footer>
 
-        <div id="valorant" class="game-dropdown">
-            <h3>Valorant</h3>
-            <p>Aucun tournoi pour le moment.</p>
-        </div>
-
-        <div id="lol" class="game-dropdown">
-            <h3>League of Legends</h3>
-            <p>Aucun tournoi pour le moment.</p>
-        </div>
-
-        <div id="smash" class="game-dropdown">
-            <h3>Super Smash Bros Ultimate</h3>
-            <div class="tournament">
-                <a href="https://www.supermajor.gg/ultimate/event/S1120974" target="_blank">Combat de poulet #1</a>
-                <div class="winner">🏆 Marshadox</div>
-            </div>
-        </div>
-    </div>
-</main>
-
-<footer>
-    &copy; 2026 Oniry &mdash; Tous droits réservés
-</footer>
-
-<script>
-function showGame(id, event) {
-    // 1. Gestion des Menus
-    document.querySelectorAll(".game-dropdown").forEach(el => {
-        el.classList.remove("active");
-    });
-    document.getElementById(id).classList.add("active");
-
-    // 2. Gestion du Glow sur les cartes
-    document.querySelectorAll(".game-card").forEach(card => {
-        card.classList.remove("active");
-    });
-    
-    // On ajoute la classe active à la carte parente cliquée
-    event.currentTarget.classList.add("active");
-}
-</script>
-
+    <script>
+        function showGame(id) {
+            document.querySelectorAll(".game-dropdown").forEach(el => {
+                el.classList.remove("active");
+            });
+            document.getElementById(id).classList.add("active");
+        }
+    </script>
 </body>
 </html>
