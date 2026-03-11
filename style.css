@@ -1,3 +1,4 @@
+/* Reset basique */
 * {
     margin: 0;
     padding: 0;
@@ -6,15 +7,14 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f2f5;
+    background: linear-gradient(120deg, #e0f7fa, #fff9c4);
     color: #333;
-    line-height: 1.6;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-/* Header et nav */
+/* Header et navigation */
 header {
     background-color: #1f2a38;
     position: sticky;
@@ -47,12 +47,12 @@ nav a:hover {
 
 /* Conteneur central */
 .container {
-    max-width: 1000px;
-    margin: 60px auto 40px;
+    max-width: 900px;
+    margin: 80px auto 60px; /* plus bas, adapté à l’écran */
     padding: 40px;
-    background-color: white;
+    background-color: rgba(255,255,255,0.9); /* léger fond blanc transparent */
     border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     text-align: center;
 }
 
@@ -74,107 +74,6 @@ p {
     margin-bottom: 20px;
 }
 
-/* Liste événements en cards */
-ul.event-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    list-style: none;
-    padding: 0;
-}
-
-ul.event-list li {
-    background-color: #f7f9fc;
-    padding: 15px;
-    border-left: 6px solid #f39c12;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-ul.event-list li:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: auto;
-    font-size: 14px;
-    color: #777;
-}
-
-/* Formulaire email / adhésion */
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-input, textarea, button {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    width: 100%;
-    max-width: 400px;
-}
-
-button {
-    background-color: #f39c12;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-button:hover {
-    background-color: #e67e22;
-}
-
-/* Calendrier planning */
-.calendar {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-    margin-top: 20px;
-}
-
-.calendar div.day {
-    background-color: #f7f9fc;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    height: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 5px;
-    cursor: pointer;
-    position: relative;
-}
-
-.calendar div.day.has-event {
-    border-left: 5px solid #f39c12;
-}
-
-/* Popup détails événement */
-.event-popup {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: white;
-    border: 2px solid #f39c12;
-    padding: 10px;
-    border-radius: 8px;
-    z-index: 10;
-    width: 180px;
-}
-
 /* Réseaux sociaux */
 .social-links {
     display: flex;
@@ -187,17 +86,20 @@ button:hover {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 6px 12px;
+    padding: 8px 14px;
     color: white;
     font-weight: bold;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 8px;
+    transition: all 0.3s;
 }
 
-.social-twitter { background-color: #1DA1F2; }
-.social-discord { background-color: #5865F2; }
-.social-x { background-color: #000; }
+/* Couleurs et bordures comme logos */
+.social-x { background-color: #000; border: 2px solid #000; }
+.social-discord { background-color: #5865F2; border: 2px solid #5865F2; }
+.social-twitter { background-color: #1DA1F2; border: 2px solid #1DA1F2; }
 
 .social-links a:hover {
-    opacity: 0.8;
+    transform: translateY(-3px);
+    opacity: 0.85;
 }
