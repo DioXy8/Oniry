@@ -1,0 +1,109 @@
+/* Reset basique */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body et polices */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header et navigation */
+header {
+    background-color: #1f2a38;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 25px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #f39c12;
+}
+
+/* Conteneur central */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Titres */
+h1 {
+    color: #1f2a38;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #1f2a38;
+    margin-bottom: 15px;
+}
+
+/* Paragraphes */
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Liste des événements */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #f7f9fc;
+    margin: 10px auto;
+    padding: 12px 20px;
+    border-left: 5px solid #f39c12;
+    border-radius: 6px;
+    max-width: 600px;
+    transition: transform 0.3s;
+}
+
+ul li:hover {
+    transform: translateX(5px);
+}
+
+/* Footer simple */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #777;
+}
+
+/* Responsive menu */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+    }
+    nav a {
+        margin: 10px 0;
+    }
+}
