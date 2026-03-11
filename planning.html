@@ -1,35 +1,83 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Oniry - Planning</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Oniry - Planning</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-    <nav>
-        <a href="index.html">Accueil</a>
-        <a href="qui-sommes-nous.html">Qui sommes-nous</a>
-        <a href="planning.html">Planning</a>
-        <a href="nos-reseaux.html">Nos réseaux</a>
-        <a href="nous-rejoindre.html">Nous rejoindre</a>
-    </nav>
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="qui-sommes-nous.html">Qui sommes-nous</a>
+    <a href="planning.html">Planning</a>
+    <a href="nos-reseaux.html">Nos réseaux</a>
+    <a href="nous-rejoindre.html">Nous rejoindre</a>
+</nav>
 </header>
 
 <div class="container">
-    <h1>Planning des événements</h1>
-    <ul>
-        <li>Tournoi Gaming - Juin</li>
-        <li>Festival Local - Juillet</li>
-        <li>Soirée Caritative - Septembre</li>
-        <li>Atelier Créatif - Octobre</li>
-    </ul>
+<h1>Planning des événements</h1>
+
+<select id="monthSelect">
+    <option value="6">Juin</option>
+    <option value="7">Juillet</option>
+    <option value="9">Septembre</option>
+</select>
+
+<div class="calendar" id="calendar">
+    <!-- Les jours et événements seront générés en JS -->
+</div>
+
 </div>
 
 <footer>
     &copy; 2026 Oniry - Tous droits réservés
 </footer>
+
+<script>
+// Exemples d'événements
+const events = {
+    6: [{day: 10, title:"Tournoi Gaming", desc:"Tournoi 5v5 en ligne"}],
+    7: [{day: 18, title:"Festival Local", desc:"Animations et food trucks"}],
+    9: [{day: 5, title:"Soirée Caritative", desc:"Collecte pour association locale"}]
+};
+
+const calendar = document.getElementById("calendar");
+const monthSelect = document.getElementById("monthSelect");
+
+function renderCalendar(month) {
+    calendar.innerHTML = "";
+    const daysInMonth = 30;
+    for (let i=1; i<=daysInMonth; i++){
+        const dayDiv = document.createElement("div");
+        dayDiv.classList.add("day");
+        dayDiv.textContent = i;
+
+        // Vérifie si jour a un événement
+        const event = events[month]?.find(e => e.day === i);
+        if(event){
+            dayDiv.classList.add("has-event");
+            const popup = document.createElement("div");
+            popup.classList.add("event-popup");
+            popup.innerHTML = `<strong>${event.title}</strong><br>${event.desc}`;
+            dayDiv.appendChild(popup);
+            dayDiv.addEventListener("mouseenter", ()=>{popup.style.display="block"});
+            dayDiv.addEventListener("mouseleave", ()=>{popup.style.display="none"});
+        }
+
+        calendar.appendChild(dayDiv);
+    }
+}
+
+// Initial
+renderCalendar(parseInt(monthSelect.value));
+
+monthSelect.addEventListener("change", ()=> {
+    renderCalendar(parseInt(monthSelect.value));
+});
+</script>
 
 </body>
 </html>
