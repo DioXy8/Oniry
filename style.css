@@ -427,10 +427,10 @@ footer {
 .internal-link:hover { color: var(--violet-light); text-decoration: none; }
 
 .game-card img {
-  width: 100%;          /* Remplit la largeur de la carte (170px) */
-  height: 240px;        /* FORCE une hauteur identique pour toutes */
-  object-fit: cover;    /* INDISPENSABLE : recadre l'image sans l'écraser */
-  object-position: center; /* Centre le contenu de l'image dans le cadre */
+  width: 100%;
+  height: 230px;        /* Force une hauteur identique pour toutes les images */
+  object-fit: cover;    /* Recadre l'image pour qu'elle remplisse le cadre sans se déformer */
+  object-position: top; /* Garde le haut de l'image (important pour les portraits de persos) */
   border-radius: 14px;
   border: 2px solid rgba(124,58,237,0.3);
   box-shadow: 0 0 20px rgba(0,0,0,0.4);
