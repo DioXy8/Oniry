@@ -419,6 +419,43 @@ p {
     text-decoration: none;
 }
 
+/* ---- Planning / Mois ---- */
+
+.tabs {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin-bottom: 36px;
+}
+
+.tab-btn {
+    padding: 9px 22px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+    color: var(--text-muted);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+.tab-btn:hover {
+    background: rgba(124,58,237,0.15);
+    color: var(--text);
+}
+
+/* mois actif = style "voir le planning" */
+
+.tab-btn.active {
+    background: linear-gradient(135deg, var(--violet), var(--blue));
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 0 18px var(--glow-v);
+}
+
 .tab-panel {
     display: none;
 }
