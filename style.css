@@ -103,3 +103,12 @@ p {
     transform: translateY(-3px);
     opacity: 0.85;
 }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    font-size: 14px;
+    color: #777;
+}
