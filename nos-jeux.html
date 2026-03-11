@@ -182,17 +182,17 @@ Combat de poulet #1
 </footer>
 
 <script>
-
-function showGame(id){
-
-document.querySelectorAll(".game-dropdown").forEach(el=>{
-el.classList.remove("active")
-})
-
-document.getElementById(id).classList.add("active")
-
+function showGame(gameId) {
+  document.querySelectorAll(".game-dropdown").forEach(el => {
+    el.classList.remove("active");
+  });
+  document.getElementById(gameId).classList.add("active");
+//glow
+  document.querySelectorAll(".game-card").forEach(el => {
+    el.classList.remove("active");
+  });
+  event.currentTarget.classList.add("active");
 }
-
 </script>
 
 </body>
