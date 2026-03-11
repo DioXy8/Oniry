@@ -4,6 +4,24 @@
     <meta charset="UTF-8">
     <title>Oniry - Nos réseaux</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles spécifiques aux placeholders */
+        .social-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 6px;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .placeholder-x { background-color: #000; }       /* X */
+        .placeholder-discord { background-color: #5865F2; } /* Discord */
+        .placeholder-twitter { background-color: #1DA1F2; } /* Twitter */
+    </style>
 </head>
 <body>
 
@@ -23,13 +41,13 @@
 
     <div class="social-links">
         <a href="https://x.com/Oniry" class="social-x" target="_blank">
-            <img src="images/x-logo.png" width="20" alt="X logo"> X
+            <div class="social-placeholder placeholder-x">X</div> X
         </a>
         <a href="https://discord.gg/ynkJpXzMq" class="social-discord" target="_blank">
-            <img src="images/discord-logo.png" width="20" alt="Discord logo"> Discord
+            <div class="social-placeholder placeholder-discord">D</div> Discord
         </a>
         <a href="https://twitter.com/Oniry" class="social-twitter" target="_blank">
-            <img src="images/twitter-logo.png" width="20" alt="Twitter logo"> Twitter
+            <div class="social-placeholder placeholder-twitter">T</div> Twitter
         </a>
     </div>
 </div>
