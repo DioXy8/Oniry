@@ -15,7 +15,7 @@
         <a href="index.html">Accueil</a>
         <a href="qui-sommes-nous.html">Qui sommes-nous</a>
         <a href="planning.html" class="active">Planning</a>
-        <a href="nos-reseaux.html">Nos reseaux</a>
+        <a href="nos-reseaux.html">Nos réseaux</a>
         <a href="nous-rejoindre.html" class="cta">Nous rejoindre</a>
       </nav>
     </div>
@@ -29,31 +29,92 @@
       <p>Retrouvez tous nos evenements a venir. Restez connectes, le planning se remplit !</p>
 
       <div class="tabs">
-        <button class="tab-btn active" onclick="showTab('juin', this)">Juin</button>
+        <button class="tab-btn active" onclick="showTab('janvier', this)">Janvier</button>
+        <button class="tab-btn" onclick="showTab('fevrier', this)">Fevrier</button>
+        <button class="tab-btn" onclick="showTab('mars', this)">Mars</button>
+        <button class="tab-btn" onclick="showTab('avril', this)">Avril</button>
+        <button class="tab-btn" onclick="showTab('mai', this)">Mai</button>
+        <button class="tab-btn" onclick="showTab('juin', this)">Juin</button>
         <button class="tab-btn" onclick="showTab('juillet', this)">Juillet</button>
+        <button class="tab-btn" onclick="showTab('aout', this)">Aout</button>
         <button class="tab-btn" onclick="showTab('septembre', this)">Septembre</button>
+        <button class="tab-btn" onclick="showTab('octobre', this)">Octobre</button>
+        <button class="tab-btn" onclick="showTab('novembre', this)">Novembre</button>
+        <button class="tab-btn" onclick="showTab('decembre', this)">Decembre</button>
+      </div>
+
+      <!-- Janvier -->
+      <div class="tab-panel active" id="janvier">
+        <div class="event-card">
+          <div class="event-info">
+            <h3>Aucun évènements</h3>
+            <p>Il n'y a pas eu d'évènement organise par Oniry ce mois-ci.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Fevrier -->
+      <div class="tab-panel" id="fevrier">
+        <div class="event-card">
+          <div class="event-info">
+            <h3>Aucun évènements</h3>
+            <p>Il n'y a pas eu d'évènement organise par Oniry ce mois-ci.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mars -->
+      <div class="tab-panel" id="mars">
+        <div class="event-card">
+          <div class="event-date">
+            <span class="day">--</span>
+            <span class="month">Mars</span>
+          </div>
+          <div class="event-info">
+            <h3>Evenement Mars - a definir</h3>
+            <p>Details et lieux ...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Avril -->
+      <div class="tab-panel" id="avril">
+        <div class="event-card">
+          <div class="event-date">
+            <span class="day">--</span>
+            <span class="month">Avril</span>
+          </div>
+          <div class="event-info">
+            <h3>Evenement Avril - a definir</h3>
+            <p>Details et lieux ...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mai -->
+      <div class="tab-panel" id="mai">
+        <div class="event-card">
+          <div class="event-date">
+            <span class="day">--</span>
+            <span class="month">Mai</span>
+          </div>
+          <div class="event-info">
+            <h3>Evenement Mai - a definir</h3>
+            <p>Details et lieux ...</p>
+          </div>
+        </div>
       </div>
 
       <!-- Juin -->
-      <div class="tab-panel active" id="juin">
+      <div class="tab-panel" id="juin">
         <div class="event-card">
           <div class="event-date">
-            <span class="day">14</span>
+            <span class="day">--</span>
             <span class="month">Juin</span>
           </div>
           <div class="event-info">
             <h3>Evenement Juin - a definir</h3>
-            <p>Details et lieu a venir. Suivez nos reseaux pour les annonces.</p>
-          </div>
-        </div>
-        <div class="event-card">
-          <div class="event-date">
-            <span class="day">28</span>
-            <span class="month">Juin</span>
-          </div>
-          <div class="event-info">
-            <h3>Evenement Juin - a definir</h3>
-            <p>Details et lieu a venir. Suivez nos reseaux pour les annonces.</p>
+            <p>Details et lieux ...</p>
           </div>
         </div>
       </div>
@@ -62,12 +123,26 @@
       <div class="tab-panel" id="juillet">
         <div class="event-card">
           <div class="event-date">
-            <span class="day">12</span>
+            <span class="day">--</span>
             <span class="month">Juil.</span>
           </div>
           <div class="event-info">
             <h3>Evenement Juillet - a definir</h3>
-            <p>Details et lieu a venir. Suivez nos reseaux pour les annonces.</p>
+            <p>Details et lieux ...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aout -->
+      <div class="tab-panel" id="aout">
+        <div class="event-card">
+          <div class="event-date">
+            <span class="day">--</span>
+            <span class="month">Aout</span>
+          </div>
+          <div class="event-info">
+            <h3>Evenement Aout - a definir</h3>
+            <p>Details et lieux ...</p>
           </div>
         </div>
       </div>
@@ -76,20 +151,63 @@
       <div class="tab-panel" id="septembre">
         <div class="event-card">
           <div class="event-date">
-            <span class="day">06</span>
+            <span class="day">--</span>
             <span class="month">Sept.</span>
           </div>
           <div class="event-info">
             <h3>Evenement Septembre - a definir</h3>
-            <p>Details et lieu a venir. Suivez nos reseaux pour les annonces.</p>
+            <p>Details et lieux ...</p>
           </div>
         </div>
       </div>
+
+      <!-- Octobre -->
+      <div class="tab-panel" id="octobre">
+        <div class="event-card">
+          <div class="event-date">
+            <span class="day">--</span>
+            <span class="month">Oct.</span>
+          </div>
+          <div class="event-info">
+            <h3>Evenement Octobre - a definir</h3>
+            <p>Details et lieux ...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Novembre -->
+      <div class="tab-panel" id="novembre">
+        <div class="event-card">
+          <div class="event-date">
+            <span class="day">--</span>
+            <span class="month">Nov.</span>
+          </div>
+          <div class="event-info">
+            <h3>Evenement Novembre - a definir</h3>
+            <p>Details et lieux ...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decembre -->
+      <div class="tab-panel" id="decembre">
+        <div class="event-card">
+          <div class="event-date">
+            <span class="day">--</span>
+            <span class="month">Dec.</span>
+          </div>
+          <div class="event-info">
+            <h3>Evenement Decembre - a definir</h3>
+            <p>Details et lieux ...</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </main>
 
   <footer>
-    &copy; 2026 Oniry &mdash; Tous droits reserves
+    &copy; 2026 Oniry &mdash; Tous droits réservés
   </footer>
 
   <script>
