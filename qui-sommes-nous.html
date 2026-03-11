@@ -1,30 +1,89 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Oniry - Qui sommes-nous</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oniry — Qui sommes-nous</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header>
-    <nav>
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">ONIRY</a>
+      <nav>
         <a href="index.html">Accueil</a>
-        <a href="qui-sommes-nous.html">Qui sommes-nous</a>
+        <a href="qui-sommes-nous.html" class="active">Qui sommes-nous</a>
         <a href="planning.html">Planning</a>
-        <a href="nos-reseaux.html">Nos réseaux</a>
-        <a href="nous-rejoindre.html">Nous rejoindre</a>
-    </nav>
-</header>
+        <a href="nos-reseaux.html">Nos reseaux</a>
+        <a href="nous-rejoindre.html" class="cta">Nous rejoindre</a>
+      </nav>
+    </div>
+  </header>
 
-<div class="container">
-    <h1>Qui sommes-nous ?</h1>
-    <p>Oniry est une association qui organise des événements pour rassembler et divertir la communauté.</p>
-</div>
+  <main>
+    <div class="container" style="text-align:center;">
+      <div class="badge">Notre histoire</div>
+      <h1>Qui sommes-nous ?</h1>
+      <div class="divider"></div>
+      <p>
+        <strong style="color:#e2e8f0;">Oniry</strong> est une association passionnee, fondee par des creatifs
+        qui croient au pouvoir des evenements pour creer du lien et de la memoire collective.
+      </p>
+      <p>
+        Notre mission est simple : imaginer, organiser et faire vivre des experiences
+        qui marquent les esprits — que ce soit des soirees, des rencontres, des spectacles
+        ou des rassemblements communautaires.
+      </p>
+      <p>
+        Chaque evenement que nous creeons est pense avec soin, dans les moindres details,
+        pour offrir a chacun un moment unique et inoubliable.
+      </p>
 
-<footer>
-    &copy; 2026 Oniry - Tous droits réservés
-</footer>
+      <div style="
+        display:flex;
+        justify-content:center;
+        gap:24px;
+        margin-top:38px;
+        flex-wrap:wrap;
+      ">
+        <div style="
+          background:rgba(124,58,237,0.1);
+          border:1px solid rgba(124,58,237,0.3);
+          border-radius:14px;
+          padding:24px 32px;
+          min-width:140px;
+        ">
+          <div style="font-family:'Cinzel',serif;font-size:2rem;font-weight:900;color:#a855f7;">2024</div>
+          <div style="font-size:0.82rem;color:#94a3b8;margin-top:4px;letter-spacing:0.06em;text-transform:uppercase;">Fondation</div>
+        </div>
+        <div style="
+          background:rgba(37,99,235,0.1);
+          border:1px solid rgba(37,99,235,0.3);
+          border-radius:14px;
+          padding:24px 32px;
+          min-width:140px;
+        ">
+          <div style="font-family:'Cinzel',serif;font-size:2rem;font-weight:900;color:#60a5fa;">100%</div>
+          <div style="font-size:0.82rem;color:#94a3b8;margin-top:4px;letter-spacing:0.06em;text-transform:uppercase;">Passion</div>
+        </div>
+        <div style="
+          background:rgba(124,58,237,0.1);
+          border:1px solid rgba(124,58,237,0.3);
+          border-radius:14px;
+          padding:24px 32px;
+          min-width:140px;
+        ">
+          <div style="font-family:'Cinzel',serif;font-size:2rem;font-weight:900;color:#a855f7;">+</div>
+          <div style="font-size:0.82rem;color:#94a3b8;margin-top:4px;letter-spacing:0.06em;text-transform:uppercase;">Evenements a venir</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 Oniry &mdash; Tous droits reserves
+  </footer>
 
 </body>
 </html>
