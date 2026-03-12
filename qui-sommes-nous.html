@@ -25,19 +25,34 @@
   <main>
     <div class="container" style="text-align:center;">
       <div class="badge">Notre histoire</div>
-      <h1>Voici les <strong>fondateurs</strong> d'Oniry :</h1>
+      <h1>Qui sommes-nous ?</h1>
       <div class="divider"></div>
+
       <p>
-        Découvrez les membres qui ont créé <strong>Oniry</strong> et qui donnent vie à nos projets communautaires.
+        <strong style="color:#e2e8f0;">Oniry</strong> est une association normande, fondée par 3 étudiants en info ayant
+        envie de dynamiser la scène normande de l'e-sport normande. Nous possédons à ce jour un gîte où on est cappable d'acceuilir jusqu'à 16 personnes, situé <a href="https://maps.app.goo.gl/H5Mfe3UyL5kTZysG7" target="_blank" class="internal-link">au Gros-Theil.</a>
+      </p>
+      <p>
+        Notre mission est simple : imaginer, organiser et faire vivre des experiences
+        qui marquent les esprits à travers nos rassemblements communautaires, qu'ils soient en ligne ou sur place.
+      </p>
+      <p>
+        Nous oevrons sur plusieurs jeux différents que vous pouvez tous retrouver dans l'onglet 
+          "<a href="nos-jeux.html" class="internal-link">Nos jeux</a>" de notre site.
       </p>
 
-      <!-- Cartes fondateurs en style inline -->
+      <p style="margin-top:36px; font-size:1rem;">
+        Voici les <strong>fondateurs</strong> d'Oniry :
+      </p>
+
+      <!-- Cartes fondateurs côte à côte -->
       <div style="
         display:flex;
         justify-content:center;
         gap:24px;
-        margin-top:38px;
-        flex-wrap:wrap;
+        margin-top:16px;
+        flex-wrap:nowrap;
+        flex-direction:row;
       ">
         <!-- Maryus276 -->
         <div style="
@@ -45,7 +60,7 @@
           border:1px solid rgba(124,58,237,0.3);
           border-radius:14px;
           padding:24px 32px;
-          min-width:180px;
+          width:180px;
           text-align:center;
         ">
           <div style="font-family:'Cinzel',serif;font-size:1.5rem;font-weight:900;color:#a855f7;">Maryus276</div>
@@ -61,7 +76,7 @@
           border:1px solid rgba(37,99,235,0.3);
           border-radius:14px;
           padding:24px 32px;
-          min-width:180px;
+          width:180px;
           text-align:center;
         ">
           <div style="font-family:'Cinzel',serif;font-size:1.5rem;font-weight:900;color:#60a5fa;">Koloman</div>
@@ -77,7 +92,7 @@
           border:1px solid rgba(124,58,237,0.3);
           border-radius:14px;
           padding:24px 32px;
-          min-width:180px;
+          width:180px;
           text-align:center;
         ">
           <div style="font-family:'Cinzel',serif;font-size:1.5rem;font-weight:900;color:#a855f7;">DioXy</div>
@@ -88,19 +103,19 @@
         </div>
       </div>
 
-      <!-- Bouton voir événements -->
+      <!-- Bouton vers le planning -->
       <a href="planning.html" style="
-        margin-top:30px;
         display:inline-block;
+        margin-top:32px;
         background:linear-gradient(135deg, #7c3aed, #2563eb);
         color:#fff;
-        font-weight:700;
-        padding:14px 28px;
-        border-radius:12px;
+        padding:16px 32px;
+        border-radius:14px;
         text-decoration:none;
+        font-weight:700;
         box-shadow:0 0 18px rgba(124,58,237,0.35);
-        transition: all 0.3s ease;
-      " onmouseover="this.style.boxShadow='0 0 30px rgba(124,58,237,0.5)'" onmouseout="this.style.boxShadow='0 0 18px rgba(124,58,237,0.35)'">
+        transition:all 0.25s;
+      ">
         Voir nos événements à venir
       </a>
 
