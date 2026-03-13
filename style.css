@@ -379,48 +379,66 @@ p {
     font-size: 0.9rem;
 }
 
-/* ---- Responsive ---- */
+/* ---- Ajustements Responsive pour le Planning ---- */
+
 @media (max-width: 680px) {
-    .header-inner {
-        flex-direction: column;
-        gap: 10px;
-        height: auto;
-        padding: 14px 20px;
+    /* On passe de 6 colonnes à 3 colonnes pour les mois pour éviter qu'ils ne sortent de l'écran */
+    .tabs {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .tab-btn {
+        padding: 8px 5px;
+        font-size: 0.75rem; /* Texte un peu plus petit sur mobile */
+    }
+
+    /* Ajustement des cartes d'événements */
     .event-card {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+        flex-direction: row; /* On garde l'alignement horizontal mais on ajuste les tailles */
+        gap: 12px;
+        text-align: left;
+    }
+
+    .event-date {
+        min-width: 60px; /* Un peu plus étroit */
+        padding: 8px 5px;
+    }
+
+    .event-date .day {
+        font-size: 1.1rem;
+    }
+
+    .event-info {
+        padding: 12px;
+    }
+
+    .event-info h3 {
+        font-size: 1rem;
+    }
 }
-    }
 
-    nav {
+/* Optionnel : pour les très petits écrans (iPhone SE, etc.) */
+@media (max-width: 400px) {
+    .tabs {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes seulement */
+    }
+    
+    .event-card {
+        flex-direction: column; /* On empile la date au-dessus du contenu */
+        align-items: stretch;
+    }
+    
+    .event-date {
+        width: 100%;
+        display: flex;
         justify-content: center;
+        align-items: center;
+        gap: 10px;
     }
-
-    .container {
-        margin: 30px 16px 40px;
-        padding: 30px 22px;
-    }
-
-    h1 {
-        font-size: 1.9rem;
-    }
-
-    .social-links {
-        gap: 15px;
-    }
-
-    .social-links a {
-        width: 130px;
-        height: 130px;
-    }
-
-    .step {
-        flex-direction: column;
-    }
-
-    .games-grid {
-        grid-template-columns: repeat(2, 1fr);
+    
+    .event-date .day {
+        margin-bottom: 0;
     }
 }
 
