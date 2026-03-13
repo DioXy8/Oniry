@@ -162,8 +162,14 @@ nav a.cta:hover {
 }
 
 @keyframes fadeSlideUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ---- Titres ---- */
@@ -269,14 +275,37 @@ p {
     border-color: var(--violet-light);
 }
 
-.social-x { color: #fff; }
-.social-x:hover { box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05); }
+.social-x {
+    color: #fff;
+}
 
-.social-discord { color: #8fa3ff; border-color: rgba(88, 101, 242, 0.2); }
-.social-discord:hover { color: #fff; border-color: #5865f2; background: rgba(88, 101, 242, 0.15) !important; box-shadow: 0 10px 30px rgba(88, 101, 242, 0.3); }
+.social-x:hover {
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
+}
 
-.social-instagram { color: #ff79c6; border-color: rgba(255, 121, 198, 0.2); }
-.social-instagram:hover { color: #fff; border-color: #ff2d8d; background: linear-gradient(135deg,#f58529,#dd2a7b,#8134af,#515bd4); box-shadow: 0 10px 30px rgba(221,42,123,0.35); }
+.social-discord {
+    color: #8fa3ff;
+    border-color: rgba(88, 101, 242, 0.2);
+}
+
+.social-discord:hover {
+    color: #fff;
+    border-color: #5865f2;
+    background: rgba(88, 101, 242, 0.15) !important;
+    box-shadow: 0 10px 30px rgba(88, 101, 242, 0.3);
+}
+
+.social-instagram {
+    color: #ff79c6;
+    border-color: rgba(255, 121, 198, 0.2);
+}
+
+.social-instagram:hover {
+    color: #fff;
+    border-color: #ff2d8d;
+    background: linear-gradient(135deg,#f58529,#dd2a7b,#8134af,#515bd4);
+    box-shadow: 0 10px 30px rgba(221,42,123,0.35);
+}
 
 /* ---- Jeux Grid ---- */
 .games-grid {
@@ -286,7 +315,11 @@ p {
     margin-top: 40px;
 }
 
-.game-card { cursor: pointer; transition: 0.25s; }
+.game-card {
+    cursor: pointer;
+    transition: 0.25s;
+}
+
 .game-card img {
     width: 100%;
     height: 220px;
@@ -297,8 +330,17 @@ p {
     transition: 0.25s;
 }
 
-.game-card:hover img { transform: scale(1.08); border-color: var(--violet-light); }
-.game-title { margin-top: 10px; font-weight: 600; font-size: 0.9rem; color: var(--text); }
+.game-card:hover img {
+    transform: scale(1.08);
+    border-color: var(--violet-light);
+}
+
+.game-title {
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text);
+}
 
 /* ---- Menus déroulants ---- */
 .game-dropdown {
@@ -311,24 +353,97 @@ p {
     text-align: left;
 }
 
-.game-dropdown.active { display: block; }
-.tournament { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-.tournament a { color: var(--blue-light); text-decoration: none; font-weight: 600; }
-.tournament a:hover { color: var(--violet-light); }
-.winner { color: var(--text-muted); font-size: 0.9rem; }
-
-/* ---- Planning / Mois (MODIFIÉ POUR MOBILE) ---- */
-.tabs {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Mobile par défaut */
-    gap: 10px;
-    margin-bottom: 36px;
+.game-dropdown.active {
+    display: block;
 }
 
-@media (min-width: 768px) {
-    .tabs {
-        grid-template-columns: repeat(6, 1fr); /* PC */
+.tournament {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tournament a {
+    color: var(--blue-light);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.tournament a:hover {
+    color: var(--violet-light);
+}
+
+.winner {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 680px) {
+    .header-inner {
+        flex-direction: column;
+        gap: 10px;
+        height: auto;
+        padding: 14px 20px;
+    } /* Cette accolade manquait ici */
+
+    .event-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
+
+    nav {
+        justify-content: center;
+    }
+
+    .container {
+        margin: 30px 16px 40px;
+        padding: 30px 22px;
+    }
+
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    .social-links {
+        gap: 15px;
+    }
+
+    .social-links a {
+        width: 130px;
+        height: 130px;
+    }
+
+    .step {
+        flex-direction: column;
+    }
+
+    .games-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.internal-link {
+    color: var(--blue-light);
+    font-weight: 600;
+    text-decoration: underline;
+    transition: all 0.2s ease;
+}
+
+.internal-link:hover {
+    color: var(--violet-light);
+    text-decoration: none;
+}
+
+/* ---- Planning / Mois ---- */
+
+.tabs {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin-bottom: 36px;
 }
 
 .tab-btn {
@@ -345,7 +460,13 @@ p {
     transition: all 0.25s;
 }
 
-.tab-btn:hover { background: rgba(124,58,237,0.15); color: var(--text); }
+.tab-btn:hover {
+    background: rgba(124,58,237,0.15);
+    color: var(--text);
+}
+
+/* mois actif = style "voir le planning" */
+
 .tab-btn.active {
     background: linear-gradient(135deg, var(--violet), var(--blue));
     color: #fff;
@@ -353,25 +474,21 @@ p {
     box-shadow: 0 0 18px var(--glow-v);
 }
 
-.tab-panel { display: none; }
-.tab-panel.active { display: block; }
-
-/* ---- Planning Events ---- */
-.event-card {
-    display: flex;
-    flex-direction: column; /* Mobile par défaut */
-    gap: 18px;
-    margin-bottom: 14px;
-    align-items: center;
-    text-align: center;
+.tab-panel {
+    display: none;
 }
 
-@media (min-width: 600px) {
-    .event-card {
-        flex-direction: row;
-        align-items: flex-start;
-        text-align: left;
-    }
+.tab-panel.active {
+    display: block;
+}
+
+/* ---- Planning Events ---- */
+
+.event-card {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 14px;
+    align-items: flex-start;
 }
 
 .event-date {
@@ -405,15 +522,16 @@ p {
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 14px 18px;
-    width: 100%; /* Important pour mobile */
 }
 
-.event-info h3 { margin-bottom: 4px; }
-.event-info p { margin: 0; font-size: 0.9rem; }
+.event-info h3 {
+    margin-bottom: 4px;
+}
 
-/* ---- Autres styles ---- */
-.internal-link { color: var(--blue-light); font-weight: 600; text-decoration: underline; transition: all 0.2s ease; }
-.internal-link:hover { color: var(--violet-light); text-decoration: none; }
+.event-info p {
+    margin: 0;
+    font-size: 0.9rem;
+}
 
 footer {
     position: relative;
@@ -425,15 +543,4 @@ footer {
     color: var(--text-muted);
     border-top: 1px solid var(--border);
     letter-spacing: 0.04em;
-}
-
-/* ---- Responsive global ---- */
-@media (max-width: 680px) {
-    .header-inner { flex-direction: column; gap: 10px; height: auto; padding: 14px 20px; }
-    nav { justify-content: center; }
-    .container { margin: 30px 16px 40px; padding: 30px 22px; }
-    h1 { font-size: 1.9rem; }
-    .social-links { gap: 15px; }
-    .social-links a { width: 130px; height: 130px; }
-    .games-grid { grid-template-columns: repeat(2, 1fr); }
 }
