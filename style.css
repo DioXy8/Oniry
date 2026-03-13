@@ -381,15 +381,24 @@ p {
 
 /* ---- Responsive ---- */
 @media (max-width: 680px) {
+
+    .tabs {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     .header-inner {
         flex-direction: column;
         gap: 10px;
         height: auto;
         padding: 14px 20px;
+    }
+
     .event-card {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
 }
     }
 
@@ -440,7 +449,7 @@ p {
 
 .tabs {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-bottom: 36px;
 }
