@@ -262,6 +262,11 @@ p {
 /* ---- Responsive ---- */
 @media (max-width: 680px) {
 
+    .tabs {
+    grid-template-columns: repeat(3, 1fr);
+    }
+    
+    }
     .header-inner {
         flex-direction: column;
         gap: 10px;
