@@ -295,6 +295,18 @@ p {
     box-shadow: 0 10px 30px rgba(88, 101, 242, 0.3);
 }
 
+.social-instagram {
+    color: #ff79c6;
+    border-color: rgba(255, 121, 198, 0.2);
+}
+
+.social-instagram:hover {
+    color: #fff;
+    border-color: #ff2d8d;
+    background: linear-gradient(135deg,#f58529,#dd2a7b,#8134af,#515bd4);
+    box-shadow: 0 10px 30px rgba(221,42,123,0.35);
+}
+
 /* ---- Jeux Grid ---- */
 .games-grid {
     display: grid;
